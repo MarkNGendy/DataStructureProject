@@ -50,4 +50,4 @@ LinkedListQueue lq = new LinkedListQueue();
     public void Exception() {
         lq.dequeue();
     }
-}}
+}

@@ -1,0 +1,21 @@
+{
+    "contacts": [
+        {
+            "emailAdd": "7amada@gmail.com",
+            "pass": "sanjone",
+            "contactName": "Hamada"
+        }, {
+            "emailAdd": "7amada@gmail.com",
+            "pass": "sanjone",
+            "contactName": "Hamada"
+        }, {
+            "emailAdd": "7amada@gmail.com",
+            "pass": "sanjone",
+            "contactName": "Hamada"
+        }, {
+            "emailAdd": "7amada@gmail.com",
+            "pass": "sanjone",
+            "contactName": "Hamada"
+        }, 1,
+    ]
+}

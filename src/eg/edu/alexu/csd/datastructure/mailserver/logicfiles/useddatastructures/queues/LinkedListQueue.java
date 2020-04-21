@@ -1,7 +1,7 @@
 package eg.edu.alexu.csd.datastructure.mailserver.logicfiles.useddatastructures.queues;
 
 
-public class LinkedListQueue implements IQueue, ILinkedBased {
+public class LinkedListQueue implements IQueue {
 	public class Node {
 		private Object data; 
 	    private Node next; 

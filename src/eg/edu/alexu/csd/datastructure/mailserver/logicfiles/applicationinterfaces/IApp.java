@@ -2,6 +2,9 @@ package eg.edu.alexu.csd.datastructure.mailserver.logicfiles.applicationinterfac
 
 import eg.edu.alexu.csd.datastructure.mailserver.logicfiles.useddatastructures.linkedlists.ILinkedList;
 
+import java.io.FileNotFoundException;
+import java.io.IOException;
+
 public interface IApp {
     /**
      * Sign in to the application
@@ -9,7 +12,7 @@ public interface IApp {
      * @param password
      * @return false if the email name not exist
      */
-    public boolean signin(String email, String password);
+    public boolean signin(String email, String password) throws IOException;
     /**
      * Create new account
      * @param contact
