@@ -1,6 +1,6 @@
-package eg.edu.alexu.csd.datastructure.mailserver.applicationinterfaces;
+package eg.edu.alexu.csd.datastructure.mailserver.logicfiles.applicationinterfaces;
 
-import eg.edu.alexu.csd.datastructure.mailserver.useddatastructures.linkedlists.ILinkedList;
+import eg.edu.alexu.csd.datastructure.mailserver.logicfiles.useddatastructures.linkedlists.ILinkedList;
 
 public interface IApp {
     /**

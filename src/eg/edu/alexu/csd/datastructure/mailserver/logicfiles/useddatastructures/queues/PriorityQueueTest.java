@@ -1,4 +1,4 @@
-package eg.edu.alexu.csd.datastructure.mailserver.useddatastructures.queues;
+package eg.edu.alexu.csd.datastructure.mailserver.logicfiles.useddatastructures.queues;
 
 
 import org.junit.jupiter.api.Test;
