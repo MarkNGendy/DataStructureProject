@@ -1,4 +1,4 @@
-package eg.edu.alexu.csd.datastructure.mailserver.useddatastructures;
+package eg.edu.alexu.csd.datastructure.mailserver.useddatastructures.queues;
 
 public class PriorityQueue implements IPriorityQueue {
 

@@ -1,4 +1,4 @@
-package eg.edu.alexu.csd.datastructure.mailserver.useddatastructures;
+package eg.edu.alexu.csd.datastructure.mailserver.useddatastructures.queues;
 
 
 import org.junit.jupiter.api.Test;
@@ -19,6 +19,7 @@ public class PriorityQueueTest {
 
     @Test
     public void invalidKey() {
+
         pq.insert("test", 0);
         pq.insert("test2", -5);
     }
