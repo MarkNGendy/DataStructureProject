@@ -19,8 +19,16 @@ public class App implements IApp {
 
     @Override
     public boolean signup(IContact contact) {
+    	if(contact.search(contact,contacts))
+    	{
+    		return false;
+    	}
+    	else
+    	{
+    		contacts.add(contact);
+    	}
 
-        return false;
+        return true;
     }
 
     @Override
