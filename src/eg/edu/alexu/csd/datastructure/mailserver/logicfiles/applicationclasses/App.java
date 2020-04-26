@@ -7,7 +7,6 @@ import eg.edu.alexu.csd.datastructure.mailserver.logicfiles.useddatastructures.l
 import eg.edu.alexu.csd.datastructure.mailserver.logicfiles.useddatastructures.linkedlists.ILinkedList;
 
 import java.io.*;
-import java.lang.reflect.Type;
 
 
 public class App implements IApp {
@@ -20,14 +19,22 @@ public class App implements IApp {
     }
 
     @Override
-    public boolean signup(IContact contact) {
-    	if(contact.search(contact,contacts))
+    public boolean signup(IContact contact) throws IOException {
+    	if(contact.search((Contact) contact,contacts))
     	{
     		return false;
     	}
     	else
     	{
     		contacts.add(contact);
+    		Contacts writeObj = listToArray(contacts);
+    		File file = new File("Contacts.json");
+    		Gson gson = new Gson();
+    		String jsonString = gson.toJson(writeObj);
+
+    		BufferedWriter writer = new BufferedWriter(new FileWriter(file));
+    		writer.write(jsonString);
+    		writer.close();
     	}
 
         return true;
@@ -57,11 +64,23 @@ public class App implements IApp {
     public boolean compose(IMail email) {
         return false;
     }
+
+
     public void arrayToList (Object[] arr, ILinkedList list) {
         for (int i = 0; i < arr.length; i++) {
             list.add(arr[i]);
         }
     }
+
+
+    public Contacts listToArray (ILinkedList list) {
+        Contact[] contactsArr = new Contact[list.size()];
+        for (int i = 0; i < list.size(); i++) {
+            contactsArr[i] = (Contact) list.get(i);
+        }
+        return new Contacts(contactsArr);
+    }
+
     private Contact[] readJSON() throws IOException {
         GsonBuilder builder = new GsonBuilder();
         builder.setPrettyPrinting();
@@ -74,13 +93,15 @@ public class App implements IApp {
         while ((s = bufferedReader.readLine()) != null) {
             stringBuilder.append(s);
         }
-        System.out.println(stringBuilder.toString());
-        Contact[] contactsArr = gson.fromJson(stringBuilder.toString(), (Type) Contact.class);
-        return contactsArr;
+        bufferedReader.close();
+        Contacts contacts = gson.fromJson(stringBuilder.toString(), Contacts.class);
+        return contacts.getContacts();
     }
 
     public static void main(String[] args) throws IOException {
         App e = new App();
         System.out.println(e.signin("7amada@gmail.com", "sanjone"));
+        IContact temp = new Contact("Arsany@gmail.com", "55", "Arsany");
+        e.signup(temp);
     }
 }

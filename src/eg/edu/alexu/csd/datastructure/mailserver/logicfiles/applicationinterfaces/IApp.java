@@ -18,7 +18,7 @@ public interface IApp {
      * @param contact
      * @return false if the email name already exist
      */
-    public boolean signup(IContact contact);
+    public boolean signup(IContact contact) throws IOException;
     /**
      * This function should be called before reading from the index file
      * and apply the sort and search parameters

@@ -5,9 +5,9 @@ import eg.edu.alexu.csd.datastructure.mailserver.logicfiles.useddatastructures.l
 import eg.edu.alexu.csd.datastructure.mailserver.logicfiles.useddatastructures.linkedlists.ILinkedList;
 
 public class Contact implements IContact {
-    public static String emailAdd;
-    public static String contactName;
-    public static String pass;
+    public String emailAdd;
+    public String contactName;
+    public String pass;
 
     public Contact(String emailAdd, String pass, String contactName) {
         this.emailAdd = emailAdd;
