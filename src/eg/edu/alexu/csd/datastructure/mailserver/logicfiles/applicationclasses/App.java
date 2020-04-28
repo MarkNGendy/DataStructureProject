@@ -66,6 +66,9 @@ public class App implements IApp {
     }
 
 
+
+
+
     public void arrayToList (Object[] arr, ILinkedList list) {
         for (int i = 0; i < arr.length; i++) {
             list.add(arr[i]);
@@ -97,6 +100,7 @@ public class App implements IApp {
         Contacts contacts = gson.fromJson(stringBuilder.toString(), Contacts.class);
         return contacts.getContacts();
     }
+
 
     public static void main(String[] args) throws IOException {
         App e = new App();
