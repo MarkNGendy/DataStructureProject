@@ -1,4 +1,4 @@
-package eg.edu.alexu.csd.datastructure.mailserver.logicfiles.useddatastructures.stack;
+package eg.edu.alexu.csd.datastructure.mailserver.useddatastructures.stack;
 
 public interface IStack {
     /**

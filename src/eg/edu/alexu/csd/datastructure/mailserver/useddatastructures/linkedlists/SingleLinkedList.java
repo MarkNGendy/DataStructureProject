@@ -1,20 +1,18 @@
-package eg.edu.alexu.csd.datastructure.mailserver.logicfiles.useddatastructures.linkedlists;
+package eg.edu.alexu.csd.datastructure.mailserver.useddatastructures.linkedlists;
 
-public class DoubleLinkedList implements ILinkedList{
-    public class DoubleNode {
+public class SingleLinkedList implements ILinkedList{
+    public class Node {
         public Object value;
-        public DoubleNode next;
-        public DoubleNode prev;
-        public DoubleNode (Object element){
+        public Node next = null;
+        public Node(Object element) {
             this.value = element;
         }
     }
 
-    private DoubleNode head;
-    private DoubleNode tail;
+    private Node head;
     private int size;
 
-    public DoubleLinkedList(){
+    public SingleLinkedList() {
         this.size = 0;
     }
 
@@ -23,27 +21,24 @@ public class DoubleLinkedList implements ILinkedList{
         if (index > size || index < 0) {
             throw new ArrayIndexOutOfBoundsException("Out of boundaries indexes");
         }
-        DoubleNode newnode = new DoubleNode(element);
-        if (index==0){
-            newnode.next = head;
-            newnode.prev = null;
-            head = newnode;
-        }
-        else {
-            DoubleNode i = head;
+        Node newNode = new Node(element);
+        if (index == 0) {
+            newNode.next = head;
+            head = newNode;
+        } else {
+            Node i = head;
             for (int count = 0; count < index - 1; count++) {
                 i = i.next;
             }
-            newnode.next = i.next;
-            newnode.prev = i;
-            i.next = newnode;
+            newNode.next = i.next;
+            i.next = newNode;
         }
         size++;
     }
 
     @Override
     public void add(Object element) {
-        add(size,element);
+        add(size, element);
     }
 
     @Override
@@ -51,7 +46,7 @@ public class DoubleLinkedList implements ILinkedList{
         if (index >= size || index < 0) {
             throw new ArrayIndexOutOfBoundsException("Out of boundaries indexes");
         }
-        DoubleNode curr = head;
+        Node curr = head;
         for (int count = 0; count < index; count++) {
             curr = curr.next;
         }
@@ -63,31 +58,26 @@ public class DoubleLinkedList implements ILinkedList{
         if (index >= size || index < 0) {
             throw new ArrayIndexOutOfBoundsException("Out of boundaries indexes");
         }
-        DoubleNode newnode = new DoubleNode(element);
-        DoubleNode j;
-        if (index == 0){
+        Node j;
+        Node newNode = new Node(element);
+        if (index == 0) {
             j = head;
-            newnode.next = j.next;
-            newnode.prev = null;
-            head = newnode;
-        }
-        else {
-            DoubleNode i = head;
+            head = newNode;
+            newNode.next = j.next;
+        } else {
+            Node i = head;
             for (int count = 1; count < index; count++) {
                 i = i.next;
             }
             j = i.next;
-            newnode.next = j.next;
-            newnode.prev = i;
-            i.next = newnode;
-            i = j.next;
+            i.next = newNode;
+            newNode.next = j.next;
         }
     }
 
     @Override
     public void clear() {
         head = null;
-        tail = null;
         size = 0;
     }
 
@@ -101,20 +91,17 @@ public class DoubleLinkedList implements ILinkedList{
         if (index >= size || index < 0) {
             throw new ArrayIndexOutOfBoundsException("Out of boundaries indexes");
         }
-        if (index == 0){
+        if (index == 0) {
             head = head.next;
-            size--;
-        }
-        else {
-            DoubleNode i = head;
-            for (int count = 1 ; count<index ; count++){
-                i =i.next;
+        } else {
+            Node prev = head;
+            for (int count = 0; count < index - 1; count++) {
+                prev = prev.next;
             }
-            DoubleNode j = i.next;
-            i.next = j.next;
-            j.prev = i;
-            size--;
+            Node nodeToRemove = prev.next;
+            prev.next = nodeToRemove.next;
         }
+        size--;
     }
 
     @Override
@@ -124,14 +111,13 @@ public class DoubleLinkedList implements ILinkedList{
 
     @Override
     public ILinkedList sublist(int fromIndex, int toIndex) {
-        // Checking indexes
         if (fromIndex < size && toIndex < size && fromIndex < toIndex && fromIndex >= 0) {
             int size = toIndex - fromIndex + 1;
-            DoubleNode i = head;
+            Node i = head;
             for (int j = 0; j < fromIndex; j++) {
                 i = i.next;
             }
-            ILinkedList sublist = (ILinkedList) new SingleLinkedList();
+            ILinkedList sublist = new SingleLinkedList();
             for (int j = 0; j < size; j++) {
                 sublist.add(i.value);
                 i = i.next;
@@ -143,7 +129,7 @@ public class DoubleLinkedList implements ILinkedList{
 
     @Override
     public boolean contains(Object o) {
-        DoubleNode i = head;
+        Node i = head;
         while (i != null) {
             if (i.value.equals(o)) {
                 return true;

@@ -1,5 +1,6 @@
 package eg.edu.alexu.csd.datastructure.mailserver.models.email;
 
+import java.time.LocalDateTime;
 import java.util.Date;
 
 public class Mail implements IMail {
@@ -79,5 +80,10 @@ public class Mail implements IMail {
     @Override
     public void setBody(String body) {
         this.body = body;
+    }
+
+    @Override
+    public LocalDateTime getTime() {
+        return null;
     }
 }

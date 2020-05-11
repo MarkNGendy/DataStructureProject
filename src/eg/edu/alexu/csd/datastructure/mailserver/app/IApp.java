@@ -2,7 +2,7 @@ package eg.edu.alexu.csd.datastructure.mailserver.app;
 
 import eg.edu.alexu.csd.datastructure.mailserver.logic.filter.IFilter;
 import eg.edu.alexu.csd.datastructure.mailserver.logic.sort.ISort;
-import eg.edu.alexu.csd.datastructure.mailserver.logicfiles.useddatastructures.linkedlists.ILinkedList;
+import eg.edu.alexu.csd.datastructure.mailserver.useddatastructures.linkedlists.ILinkedList;
 import eg.edu.alexu.csd.datastructure.mailserver.models.contact.IContact;
 import eg.edu.alexu.csd.datastructure.mailserver.models.email.IMail;
 import eg.edu.alexu.csd.datastructure.mailserver.models.folder.IFolder;

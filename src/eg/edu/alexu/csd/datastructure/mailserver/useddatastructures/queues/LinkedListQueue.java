@@ -1,4 +1,4 @@
-package eg.edu.alexu.csd.datastructure.mailserver.logicfiles.useddatastructures.queues;
+package eg.edu.alexu.csd.datastructure.mailserver.useddatastructures.queues;
 
 
 public class LinkedListQueue implements IQueue {

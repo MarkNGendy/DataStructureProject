@@ -1,4 +1,4 @@
-package eg.edu.alexu.csd.datastructure.mailserver.logicfiles.useddatastructures.linkedlists;
+package eg.edu.alexu.csd.datastructure.mailserver.useddatastructures.linkedlists;
 
 public interface ILinkedList {
     /**

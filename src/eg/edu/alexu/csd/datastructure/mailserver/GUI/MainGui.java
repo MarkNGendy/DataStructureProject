@@ -1,4 +1,4 @@
-package eg.edu.alexu.csd.datastructure.mailserver.logicfiles.applicationclasses;
+package eg.edu.alexu.csd.datastructure.mailserver.GUI;
 
 import javafx.application.Application;
 import javafx.geometry.Insets;

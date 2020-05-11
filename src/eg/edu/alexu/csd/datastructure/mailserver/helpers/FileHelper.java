@@ -4,18 +4,18 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import eg.edu.alexu.csd.datastructure.mailserver.models.contact.Contact;
 import eg.edu.alexu.csd.datastructure.mailserver.models.contact.Contacts;
-import eg.edu.alexu.csd.datastructure.mailserver.logicfiles.useddatastructures.linkedlists.DoubleLinkedList;
-import eg.edu.alexu.csd.datastructure.mailserver.logicfiles.useddatastructures.linkedlists.ILinkedList;
 import eg.edu.alexu.csd.datastructure.mailserver.models.email.Mail;
 import eg.edu.alexu.csd.datastructure.mailserver.models.email.Mails;
 import eg.edu.alexu.csd.datastructure.mailserver.models.folder.Files;
 import eg.edu.alexu.csd.datastructure.mailserver.models.folder.IFolder;
+import eg.edu.alexu.csd.datastructure.mailserver.useddatastructures.linkedlists.DoubleLinkedList;
+import eg.edu.alexu.csd.datastructure.mailserver.useddatastructures.linkedlists.ILinkedList;
 
 import java.io.*;
 
 public class FileHelper {
     public ILinkedList getContacts() {
-        File file = new File("Contacts.json");
+        File file = new File("DataStructureProject/Contacts.json");
         BufferedReader bufferedReader = null;
         StringBuilder stringBuilder = new StringBuilder();
         try {

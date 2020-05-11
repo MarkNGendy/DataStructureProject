@@ -1,5 +1,6 @@
 package eg.edu.alexu.csd.datastructure.mailserver.models.email;
 
+import java.time.LocalDateTime;
 import java.util.Date;
 
 public interface IMail {
@@ -31,4 +32,6 @@ public interface IMail {
     String getBody();
 
     void setBody(String body);
+
+    LocalDateTime getTime();
 }

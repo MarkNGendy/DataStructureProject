@@ -1,6 +1,6 @@
 package eg.edu.alexu.csd.datastructure.mailserver.models.folder;
 
-import eg.edu.alexu.csd.datastructure.mailserver.logicfiles.useddatastructures.linkedlists.ILinkedList;
+import eg.edu.alexu.csd.datastructure.mailserver.useddatastructures.linkedlists.ILinkedList;
 
 public class Folder implements IFolder{
     private String pathName;

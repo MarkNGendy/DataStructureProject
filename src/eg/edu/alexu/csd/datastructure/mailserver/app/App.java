@@ -5,14 +5,11 @@ import eg.edu.alexu.csd.datastructure.mailserver.logic.filter.AllFilter;
 import eg.edu.alexu.csd.datastructure.mailserver.logic.filter.IFilter;
 import eg.edu.alexu.csd.datastructure.mailserver.logic.sort.DateSort;
 import eg.edu.alexu.csd.datastructure.mailserver.logic.sort.ISort;
-import eg.edu.alexu.csd.datastructure.mailserver.logicfiles.useddatastructures.linkedlists.DoubleLinkedList;
-import eg.edu.alexu.csd.datastructure.mailserver.logicfiles.useddatastructures.linkedlists.ILinkedList;
-import eg.edu.alexu.csd.datastructure.mailserver.models.contact.Contact;
 import eg.edu.alexu.csd.datastructure.mailserver.models.contact.IContact;
 import eg.edu.alexu.csd.datastructure.mailserver.models.email.IMail;
 import eg.edu.alexu.csd.datastructure.mailserver.models.folder.IFolder;
-
-import java.io.*;
+import eg.edu.alexu.csd.datastructure.mailserver.useddatastructures.linkedlists.DoubleLinkedList;
+import eg.edu.alexu.csd.datastructure.mailserver.useddatastructures.linkedlists.ILinkedList;
 
 public class App implements IApp {
 
