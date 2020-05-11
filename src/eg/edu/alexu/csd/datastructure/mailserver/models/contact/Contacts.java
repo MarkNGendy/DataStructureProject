@@ -1,4 +1,5 @@
-package eg.edu.alexu.csd.datastructure.mailserver.logicfiles.applicationclasses;
+package eg.edu.alexu.csd.datastructure.mailserver.models.contact;
+
 
 public class Contacts {
     private Contact[] contacts;

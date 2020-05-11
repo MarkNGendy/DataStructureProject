@@ -1,8 +1,12 @@
-package eg.edu.alexu.csd.datastructure.mailserver.logicfiles.applicationinterfaces;
+package eg.edu.alexu.csd.datastructure.mailserver.app;
 
+import eg.edu.alexu.csd.datastructure.mailserver.logic.filter.IFilter;
+import eg.edu.alexu.csd.datastructure.mailserver.logic.sort.ISort;
 import eg.edu.alexu.csd.datastructure.mailserver.logicfiles.useddatastructures.linkedlists.ILinkedList;
+import eg.edu.alexu.csd.datastructure.mailserver.models.contact.IContact;
+import eg.edu.alexu.csd.datastructure.mailserver.models.email.IMail;
+import eg.edu.alexu.csd.datastructure.mailserver.models.folder.IFolder;
 
-import java.io.FileNotFoundException;
 import java.io.IOException;
 
 public interface IApp {
@@ -27,12 +31,12 @@ public interface IApp {
      * @param sort to apply sort
      */
     public void setViewingOptions(IFolder folder, IFilter filter, ISort sort);
-/**
- * You should use setViewingOptions function first
- * @param page to handle paging
- * @return list of emails
- */
-public IMail[] listEmails(int page);
+    /**
+     * You should use setViewingOptions function first
+     * @param page to handle paging
+     * @return list of emails
+     */
+    public IMail[] listEmails(int page);
     /**
      * You should use setViewingOptions function first
      * @param mails to be moved to trash
